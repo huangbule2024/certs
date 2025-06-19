@@ -1,0 +1,17 @@
+[req]
+req_extensions = v3_req
+distinguished_name = req_distinguished_name
+[req_distinguished_name]
+[ v3_req ]
+basicConstraints = CA:FALSE
+keyUsage = nonRepudiation, digitalSignature, keyEncipherment
+extendedKeyUsage = clientAuth, serverAuth
+subjectAltName = @alt_names
+# 这里是重点，需要将里面配置为最终服务端需要的域名或者IP
+# 这里可以写多个，能够自行添加DNS.X = XXXXXX
+[alt_names]
+#DNS.1 = www.test2.com
+#DNS.2 = www.test.com
+IP.1 = 10.10.20.240
+#IP.2 = 2.2.2.2
+#IP.3 = 3.3.3.3
